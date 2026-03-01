@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(41, 41, 41);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    gap: 5px;
+    border: 2px gray solid;
+    padding: 12px;
+    border-radius: 16px;
+}
