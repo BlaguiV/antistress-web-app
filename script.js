@@ -1,5 +1,9 @@
 const container = document.getElementById("container")
-const boxes = 1600
+const firstMode = document.getElementById("first-mode-sec")
+const secondMode = document.getElementById("second-mode-inf")
+const modeSwitchBtns = document.querySelectorAll(".switch-mode-btn")
+
+const boxes = 1200
 
 for (let i = 0; i < boxes; i++) {
     const box = document.createElement("div")
@@ -23,8 +27,16 @@ function setColorOnBox(el) {
     const color = getRandomColor()
 
     el.style.background = color
-    // el.style.boxShadow = `0 0 10xp ${color}`
     setTimeout(() => {
         el.style.background = "rgb(41, 41, 41)"
     }, 1000)
 }
+
+modeSwitchBtns.forEach(button => {
+    button.addEventListener("click", () => {
+        if (button.classList.contains("active")) return
+
+        modeSwitchBtns.forEach(btn => btn.classList.remove("active"))
+        button.classList.add("active")
+    })
+});
